@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\Login\login-component.ts" />
     <None Remove="ClientApp\src\app\Transaksjoner\kjop-component.ts" />
     <None Remove="ClientApp\src\app\Transaksjoner\Konto.ts" />
     <None Remove="ClientApp\src\app\animations.ts" />
@@ -42,6 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\Login\login-component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Transaksjoner\kjop-component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Konto.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\animations.ts" />

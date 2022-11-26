@@ -5,6 +5,7 @@ import { HomeComponent } from "./Home/home-component";
 import { EndreComponent } from "./Konto/endre-component";
 import { KontoComponent } from "./Konto/konto-component";
 import { SelgComponent } from "./Transaksjoner/selg-component";
+import { LoginComponent } from "./Login/login-component";
 
 
 const appRoots: Routes = [
@@ -13,6 +14,7 @@ const appRoots: Routes = [
     { path: 'selg/:id', component: SelgComponent},
     { path: 'home', component: HomeComponent },
     { path: 'endre/:id', component: EndreComponent },
+    { path: 'login', component: LoginComponent},
     { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 

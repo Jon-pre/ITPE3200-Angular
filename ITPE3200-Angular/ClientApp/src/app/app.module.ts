@@ -11,6 +11,7 @@ import { KjopComponent } from './Transaksjoner/kjop-component';
 import { HomeComponent } from './Home/home-component';
 import { EndreComponent } from './Konto/endre-component';
 import { SelgComponent } from './Transaksjoner/selg-component';
+import { LoginComponent } from './Login/login-component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SelgComponent } from './Transaksjoner/selg-component';
         KjopComponent,
         SelgComponent,
         HomeComponent,
-        EndreComponent
+        EndreComponent,
+        LoginComponent
   ], 
     
     imports: [

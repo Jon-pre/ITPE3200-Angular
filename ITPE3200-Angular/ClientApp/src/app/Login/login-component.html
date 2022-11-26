@@ -1,0 +1,23 @@
+﻿<div class="overskrift">
+    <h2>Logg inn</h2>
+</div>
+<div class="container">
+    <div class="col-md-4">
+        <form [formGroup]="loginSkjema" (ngSubnit)="loggInn()">
+            <div class="form-group">
+                <label>Brukernavn</label>
+                <input class="form-control" formControlName="brukernavn"/>
+            </div>
+            <div class="form-group">
+                <label>Passord</label>
+                <input class="form-control" formControlName="passord"/>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">logg inn</button>
+            </div>
+        </form>
+
+    </div>
+
+
+</div>
