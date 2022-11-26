@@ -18,6 +18,7 @@
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.27" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.0" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,7 +29,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\Transaksjoner\kjop-component.ts" />
+    <None Remove="ClientApp\src\app\Transaksjoner\Konto.ts" />
+    <None Remove="ClientApp\src\app\animations.ts" />
+    <None Remove="ClientApp\src\app\app-routing.module.ts" />
+    <None Remove="ClientApp\src\app\Home\home-component.ts" />
+    <None Remove="ClientApp\src\app\Konto\konto-component.ts" />
+    <None Remove="ClientApp\src\app\Konto\NewFile.txt" />
+    <None Remove="ClientApp\src\app\Navigation\navigation-component.ts" />
     <None Remove="ClientApp\src\app\NewFile.txt" />
+    <None Remove="ClientApp\src\app\Transaksjoner\selg-component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\Transaksjoner\kjop-component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Konto.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\animations.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Home\home-component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Konto\konto-component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Navigation\navigation-component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Transaksjoner\selg-component.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

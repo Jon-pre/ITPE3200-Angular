@@ -1,0 +1,23 @@
+﻿<div class="overskrift">
+    <h2>Oversikt over din konto</h2>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Navn</th>
+                    <th>Land</th>
+                    <th>Balanse</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let konto of DinKonto">
+                <tr>
+                    <td>{{konto.navn}}</td>
+                    <td>{{konto.land}}</td>
+                    <td>{{konto.kontobalanse}}</td>
+                    <td><button class="btn btn-primary" [routerLink]="['/endre',konto.id]">Endre</button></td>
+                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

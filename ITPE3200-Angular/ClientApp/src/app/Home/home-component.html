@@ -1,0 +1,30 @@
+﻿<div>
+    <h1>Hei, dette er hjemmesiden</h1>
+</div>
+<div class="container">
+    <div class="col-md-12">
+        <div *ngIf="laster">Laster kunder....</div>
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>Navn</th>
+                    <th>Pris</th>
+                    <th>Prosent</th>
+                    <th>Kjøp</th>
+                    <th>Selg</th>
+                    <th>Fjern fra liste</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let aksje of alleAksjer">
+                <tr>
+                    <td>{{aksje.navn}}</td>
+                    <td>{{aksje.pris}}</td>
+                    <td>{{aksje.prosent}}</td>
+                    <td><button class="btn btn-primary" [routerLink]="['/kjop', aksje.id]">Kjøp</button></td>
+                    <td><button class="btn btn-danger" [routerLink]="['/selg', aksje.id]">Selg</button></td>
+                    <td><button class="btn btn-warning" (click)="slettEnAksje(aksje.id)">Slett</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
