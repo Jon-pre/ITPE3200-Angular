@@ -1,6 +1,8 @@
 ﻿export class Konto {
     id: number;
-    navn: string;
+    kontonavn: string;
     land: string;
     kontobalanse: number;
+    brukernavn: string;
+    passord: string;
 }

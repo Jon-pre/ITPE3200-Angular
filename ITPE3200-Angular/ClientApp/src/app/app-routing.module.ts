@@ -9,13 +9,13 @@ import { LoginComponent } from "./Login/login-component";
 
 
 const appRoots: Routes = [
-    { path: 'konto',component: KontoComponent },
+    { path: 'konto', component: KontoComponent },
     { path: 'kjop/:id', component: KjopComponent },
     { path: 'selg/:id', component: SelgComponent},
     { path: 'home', component: HomeComponent },
     { path: 'endre/:id', component: EndreComponent },
     { path: 'login', component: LoginComponent},
-    { path: '', redirectTo: '/home', pathMatch: 'full' }
+    { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
 @NgModule({

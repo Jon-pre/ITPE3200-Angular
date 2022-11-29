@@ -4,6 +4,13 @@
 a {
   color: #0366d6;
 }
+body {
+    background-color: #F9F5EB;
+    min-height:100%;
+    display:flex;
+    flex-direction:column
+
+}
 
 code {
   color: #e01a76;
@@ -13,4 +20,51 @@ code {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+footer {
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    height: 6vw;
+    background-color: #607EAA;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 6vw;
+    color: white;
+    
+   
+}
+    footer a {
+        color: #ffffff;
+    }
+
+        footer a:hover {
+            color: #090808;
+            background-color: #f8f6f6;
+            font-weight: bold;
+        }
+
+
+
+footer p{
+    color: white;
+}
+nav {
+    background-color: #1C3879;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li {
+    color: white;
+    text-decoration: none;
+}
+.table-container{
+    margin:1vw;
+}
+.container{
+    flex:1;
+    margin-bottom:10vw;
 }

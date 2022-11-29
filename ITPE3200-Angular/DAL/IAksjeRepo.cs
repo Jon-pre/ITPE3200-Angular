@@ -13,6 +13,8 @@ namespace ITPE3200_Angular.DAL
         Task<bool> Endre(Konto konto);
         Task<Konto> hentKonto(int id);
         Task<bool> Slett(int id);
+        Task<bool> logInn(Konto konto);
 
+       // Task<Konto> hentId(Konto konto);
     }
 }

@@ -1,22 +1,28 @@
-﻿<<div class="overskrift">
+﻿<div class="overskrift">
     <h2>Oppdater din konto informasjon</h2>
 </div>
- <div class="container">
-     <div class="col-md-4">
-         <form [formGroup]="skjema" (ngSubmit)="endreEnKonto()">
-             <input class="form-control" formControlName="id" type="hidden" />
-             <div class="form-group">
-                 <label>Navn</label>
-                 <input class="form-control" formControlName="navn" />             
-             </div>
-             <div class="form-group">
-                 <label>Land</label>
-                 <input class="form-control" formControlName="land" />  
-             </div>
-             <div class="form-group">
-                 <button type="submit" class="btn btn-primary">Endre</button>
-                 <button class="btn btn-default" routerLink="/home">Tilbake</button>
-             </div>
-         </form>
-     </div>
- </div>
+<div class="container">
+    <div class="col-md-4">
+        <form [formGroup]="endreSkjema" (ngSubmit)="vedSubmit()">
+            <input class="form-control" formControlName="id" type="hidden" />
+            <div class="form-group">
+                <label>Kontonavn</label>
+                <input class="form-control" formControlName="kontonavn" />
+                <p class="alert alert-warning" [hidden]="endreSkjema.controls.kontonavn.valid || (endreSkjema.controls.kontonavn.pristine && !submitted)">
+                    Kan bare bestå av bokstaver og må være lengre enn 2
+                </p>
+            </div>
+            <div class="form-group">
+                <label>Land</label>
+                <input class="form-control" formControlName="land" />
+                <p class="alert alert-warning" [hidden]="endreSkjema.controls.land.valid || (endreSkjema.controls.land.pristine && !submitted)">
+                    Må bare bestå av bokstaver
+                </p>
+            </div>
+            <div class="form-group">
+                <button type="submit" [disabled]="!endreSkjema.valid" class="btn btn-primary">Endre</button>
+                <button class="btn btn-default" routerLink="/home">Tilbake</button>
+            </div>
+        </form>
+    </div>
+</div>

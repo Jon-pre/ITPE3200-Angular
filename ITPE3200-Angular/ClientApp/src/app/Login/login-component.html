@@ -3,17 +3,26 @@
 </div>
 <div class="container">
     <div class="col-md-4">
-        <form [formGroup]="loginSkjema" (ngSubnit)="loggInn()">
+        <form [formGroup]="loginSkjema" (ngSubmit)="vedSubmit()">
             <div class="form-group">
                 <label>Brukernavn</label>
-                <input class="form-control" formControlName="brukernavn"/>
+                <input class="form-control" formControlName="brukernavn" />
+                <p class="alert alert-warning" [hidden]="loginSkjema.controls.brukernavn.valid || (loginSkjema.controls.brukernavn.pristine && !submitted)">
+                    skriv 2 bokstaver
+                </p>
+
             </div>
             <div class="form-group">
                 <label>Passord</label>
-                <input class="form-control" formControlName="passord"/>
+                <input class="form-control" formControlName="passord" />
+
+                <p class="alert alert-warning" [hidden]="loginSkjema.controls.passord.valid || (loginSkjema.controls.passord.pristine && !submitted)">
+                    Skriv mellom 2-50 bukstaver med siffer
+                </p>
+             
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">logg inn</button>
+                <button type="submit"[disabled]="!loginSkjema.valid" class="btn btn-primary">logg inn</button>
             </div>
         </form>
 

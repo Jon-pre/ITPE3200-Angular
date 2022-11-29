@@ -33,7 +33,10 @@ export class HomeComponent {
                 this.router.navigate(['/home']);
             },
             error => console.log(error)
-            );
+        );
+        window.location.reload();
+
+
     };
     
     

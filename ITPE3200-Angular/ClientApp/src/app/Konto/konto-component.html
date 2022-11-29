@@ -11,7 +11,7 @@
             </thead>
             <tbody *ngFor="let konto of DinKonto">
                 <tr>
-                    <td>{{konto.navn}}</td>
+                    <td>{{konto.kontonavn}}</td>
                     <td>{{konto.land}}</td>
                     <td>{{konto.kontobalanse}}</td>
                     <td><button class="btn btn-primary" [routerLink]="['/endre',konto.id]">Endre</button></td>

@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace ITPE3200_Angular
 {
@@ -29,6 +30,12 @@ namespace ITPE3200_Angular
             services.AddScoped<IAksjeRepo, AksjeRepository>();
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
+            services.AddSession(options =>
+            {
+                options.Cookie.Name = ".AdventureWorks.Session";
+                options.IdleTimeout = TimeSpan.FromSeconds(1800);
+                options.Cookie.IsEssential = true;
+            });
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
@@ -57,7 +64,7 @@ namespace ITPE3200_Angular
             {
                 app.UseSpaStaticFiles();
             }
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using System;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using System.Security.Cryptography;
+using System.ComponentModel.Design;
 
 namespace ITPE3200_Angular.DAL
 {
@@ -44,7 +47,7 @@ namespace ITPE3200_Angular.DAL
                 List<Konto> alleKontoer = await _db.Kontoer.Select(k => new Konto
                 {
                     id = k.id,
-                    navn = k.navn,
+                    kontonavn = k.kontonavn,
                     land = k.land,
                     kontobalanse = k.kontobalanse
                 }).ToListAsync();
@@ -74,7 +77,7 @@ namespace ITPE3200_Angular.DAL
             try
             {
                 var endreKonto = await _db.Kontoer.FindAsync(konto.id);
-                endreKonto.navn = konto.navn;
+                endreKonto.kontonavn = konto.kontonavn;
                 endreKonto.land = konto.land;
                 endreKonto.kontobalanse = konto.kontobalanse;
                 await _db.SaveChangesAsync();
@@ -92,11 +95,23 @@ namespace ITPE3200_Angular.DAL
             var hentetKonto = new Konto()
             {
                 id = enKonto.id,
-                navn = enKonto.navn,
+                kontonavn = enKonto.kontonavn,
                 land = enKonto.land,
+                kontobalanse = enKonto.kontobalanse
             };
             return hentetKonto;
         }
+        /*
+        public async Task<Konto> hentId(Konto konto)
+        {
+            Kontoer enKonto = await _db.Kontoer.FindAsync(konto.passord);
+            var hentetKonto = new Konto()
+            {
+                kontoid = enKonto.id,
+            };
+            return hentetKonto;
+        }
+        */
         public async Task<bool> Slett(int id)
         {
             try
@@ -118,14 +133,50 @@ namespace ITPE3200_Angular.DAL
         {
             try
             {
-                var konto1 = await _db.Kontoer.FindAsync(konto.id);
-                konto1.navn = konto.navn;
-                konto1.land = konto.land;
+                var enKonto = await _db.Kontoer.FindAsync(konto.id);
+                enKonto.kontonavn = konto.kontonavn;
+                enKonto.land = konto.land;
                 await _db.SaveChangesAsync();
                 return true;
             }
             catch
             {
+                return false;
+            }
+        }
+        public static byte[] lagHash(String passord, byte[] salt)
+        {
+            return KeyDerivation.Pbkdf2(
+                                password: passord,
+                                salt: salt,
+                                prf: KeyDerivationPrf.HMACSHA512,
+                                iterationCount: 1000,
+                                numBytesRequested: 32);
+        }
+        public static byte[] lagSalt()
+        {
+            var csp = new RNGCryptoServiceProvider();
+            var salt = new byte[24];
+            csp.GetBytes(salt);
+            return salt;
+        }
+
+        public async Task<bool> logInn(Konto konto)
+        {
+            try
+            {
+                Kontoer funnetkonto = await _db.Kontoer.FirstOrDefaultAsync(b => b.brukernavn == konto.brukernavn);
+                //sjekk passord
+                byte[] hash = lagHash(konto.passord, funnetkonto.salt);
+                bool ok = hash.SequenceEqual(funnetkonto.passord);
+                if (ok)
+                { 
+                    return true;
+                }
+                return false;
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
                 return false;
             }
         }

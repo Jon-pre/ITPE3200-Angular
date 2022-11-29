@@ -15,9 +15,12 @@ namespace ITPE3200_Angular.DAL
     public class Kontoer
     {
         public int id { get; set; }
-        public string navn { get; set; }
+        public string kontonavn { get; set; }
         public string land { get; set; }
         public int kontobalanse { get; set; }
+        public string brukernavn { get; set; }
+        public byte[] passord { get; set; }
+        public byte[] salt { get; set; }
     }
 
 

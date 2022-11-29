@@ -11,13 +11,32 @@
                 <th>Pris</th>
             </tr>
         </thead>
-        <!--   <tbody *ngFor="let aksje of alleAksjer, let i = index"> -->
         <tbody>
             <tr>
                 <th #navn></th>
                 <th #prosent></th>
                 <th #pris></th>
+                <td><button class="btn btn-danger" (click)="selg()">Selg</button></td>
             </tr>
         </tbody>
     </table>
+    <div>
+        <h2>Konto</h2>
     </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Konto-Navn</th>
+                <th>Land</th>
+                <th>Kontobalanse</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td #kontonavn></td>
+                <td #land></td>
+                <td #kontobalanse></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
