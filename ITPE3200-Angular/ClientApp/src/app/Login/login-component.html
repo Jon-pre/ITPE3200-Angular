@@ -14,7 +14,7 @@
             </div>
             <div class="form-group">
                 <label>Passord</label>
-                <input class="form-control" formControlName="passord" />
+                <input class="form-control" type="password" formControlName="passord" />
 
                 <p class="alert alert-warning" [hidden]="loginSkjema.controls.passord.valid || (loginSkjema.controls.passord.pristine && !submitted)">
                     Skriv mellom 2-50 bukstaver med siffer

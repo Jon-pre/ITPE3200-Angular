@@ -54,7 +54,8 @@ export class LoginComponent {
             this.http.get<Konto>("api/konto").subscribe(retur => {
 
             })
-        }
+    }
+
 
     
 }

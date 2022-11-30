@@ -31,7 +31,6 @@ endreSkjema: FormGroup;
 
     ngOnInit() {
         this.route.params.subscribe(params => {
-          //  this.endreKonto(params.id);
             this.endreSkjema.patchValue({ id: Number(params.id) });
         })
     }

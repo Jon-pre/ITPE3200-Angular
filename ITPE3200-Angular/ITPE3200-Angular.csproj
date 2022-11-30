@@ -34,7 +34,6 @@
     <None Remove="ClientApp\src\app\Login\NewFile.txt" />
     <None Remove="ClientApp\src\app\Transaksjoner\kjop-component.ts" />
     <None Remove="ClientApp\src\app\Transaksjoner\Konto.ts" />
-    <None Remove="ClientApp\src\app\animations.ts" />
     <None Remove="ClientApp\src\app\app-routing.module.ts" />
     <None Remove="ClientApp\src\app\Home\home-component.ts" />
     <None Remove="ClientApp\src\app\Konto\konto-component.ts" />
@@ -49,7 +48,6 @@
     <TypeScriptCompile Include="ClientApp\src\app\Login\login-component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Transaksjoner\kjop-component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Konto.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\animations.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Home\home-component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Konto\konto-component.ts" />

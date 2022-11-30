@@ -65,7 +65,6 @@ namespace ITPE3200_Angular.Controllers
                 _logger.LogInformation("Aksjen ble ikke kjøpt");
                 return NotFound("Aksjen ble ikke kjøp");
             }
-            //_logger.LogInformation("Kjøp av aksje av konto: " + konto.id + " " + konto.navn);
             _logger.LogInformation("Aksjen ble ikke kjøp");
             return Ok("Aksjen ble kjøp");
             }

@@ -101,17 +101,6 @@ namespace ITPE3200_Angular.DAL
             };
             return hentetKonto;
         }
-        /*
-        public async Task<Konto> hentId(Konto konto)
-        {
-            Kontoer enKonto = await _db.Kontoer.FindAsync(konto.passord);
-            var hentetKonto = new Konto()
-            {
-                kontoid = enKonto.id,
-            };
-            return hentetKonto;
-        }
-        */
         public async Task<bool> Slett(int id)
         {
             try

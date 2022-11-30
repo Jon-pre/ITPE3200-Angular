@@ -12,7 +12,6 @@ import { HomeComponent } from './Home/home-component';
 import { EndreComponent } from './Konto/endre-component';
 import { SelgComponent } from './Transaksjoner/selg-component';
 import { LoginComponent } from './Login/login-component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './Footer/footer-component';
 
 @NgModule({

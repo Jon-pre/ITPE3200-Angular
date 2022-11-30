@@ -33,11 +33,7 @@ namespace ITPE3200_Angular.DAL
                 byte[] hash = AksjeRepository.lagHash(passord, salt);
  
                 var Konto1 = new Kontoer { kontonavn = "Petter", land = "Norge", kontobalanse = 100000, brukernavn="brukernavn", passord= hash, salt=salt };
-                var passord2 = "Passord123";
-                byte[] salt2 = AksjeRepository.lagSalt();
-                byte[] hash2 = AksjeRepository.lagHash(passord2, salt2);
-
-                var konto2 = new Kontoer { kontonavn = "Gunnar", land = "Norge", kontobalanse = 200000, brukernavn = "Gunnar", passord = hash2, salt = salt2 };
+                
                 context.Aksjer.Add(Askje1);
                 context.Aksjer.Add(Askje2);
                 context.Aksjer.Add(Askje3);
@@ -52,7 +48,6 @@ namespace ITPE3200_Angular.DAL
                 context.Aksjer.Add(Askje12);
 
                 context.Kontoer.Add(Konto1);
-              //  context.Kontoer.Add(konto2);
 
                 context.SaveChanges();
 

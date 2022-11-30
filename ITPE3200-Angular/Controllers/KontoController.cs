@@ -53,7 +53,7 @@ namespace ITPE3200_Angular.Controllers
                     return NotFound("Konto ble ikke endret - Feil");
                 }
                 _logger.LogInformation("Endret på konto ");
-                return Ok();
+                return Ok(konto);
             }
             _logger.LogInformation("Feil i inputvalidering");
             return BadRequest();
@@ -102,18 +102,7 @@ namespace ITPE3200_Angular.Controllers
             _logger.LogInformation("Konto ble ikke logget inn");
             return BadRequest();
         }
-        /*[HttpGet]
-        public async Task<ActionResult> hentId(Konto konto)
-        {
-            Konto enKonto = await _db.hentId(konto);
-            if(konto == null)
-            {
-                return NotFound();
-            }
-            return Ok();
-        }
-
-        */
+ 
 
 
 

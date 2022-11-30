@@ -27,8 +27,7 @@ export class KjopComponent {
         this.route.params.subscribe(params => {
             var kontoId: number = 1;
             this.hentEn(params.id);
-         //   this.hentkonto(params.id);
-            console.log(params.id);
+            console.log(params.id); // loggin til konsoll for å se at den er riktig datatype
             this.hentEnKonto(kontoId);
             console.log(kontoId);
         });
